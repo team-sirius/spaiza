@@ -1,0 +1,381 @@
+/*
+*       ------------------
+*       *  Developed By: *
+*       ------------------
+*                                                                                dddddddd
+*                SSSSSSSSSSSSSSS                                                 d::::::d
+*              SS:::::::::::::::S                                                d::::::d
+*             S:::::SSSSSS::::::S                                                d::::::d
+*             S:::::S     SSSSSSS                                                d:::::d 
+*             S:::::S              aaaaaaaaaaaaa     aaaaaaaaaaaaa       ddddddddd:::::d 
+*             S:::::S              a::::::::::::a    a::::::::::::a    dd::::::::::::::d 
+*              S::::SSSS           aaaaaaaaa:::::a   aaaaaaaaa:::::a  d::::::::::::::::d 
+*               SS::::::SSSSS               a::::a            a::::a d:::::::ddddd:::::d 
+*                 SSS::::::::SS      aaaaaaa:::::a     aaaaaaa:::::a d::::::d    d:::::d 
+*                    SSSSSS::::S   aa::::::::::::a   aa::::::::::::a d:::::d     d:::::d 
+*                         S:::::S a::::aaaa::::::a  a::::aaaa::::::a d:::::d     d:::::d 
+*                         S:::::Sa::::a    a:::::a a::::a    a:::::a d:::::d     d:::::d 
+*             SSSSSSS     S:::::Sa::::a    a:::::a a::::a    a:::::a d::::::ddddd::::::dd
+*             S::::::SSSSSS:::::Sa:::::aaaa::::::a a:::::aaaa::::::a  d:::::::::::::::::d
+*             S:::::::::::::::SS  a::::::::::aa:::a a::::::::::aa:::a  d:::::::::ddd::::d
+*              SSSSSSSSSSSSSSS     aaaaaaaaaa  aaaa  aaaaaaaaaa  aaaa   ddddddddd   ddddd
+*
+*            ______________________________________________________________________________
+*                
+*                            Email: sakib.saad.khan@gmail.com
+*                            ++++++++++++++++++++++++++++++++
+*
+*/
+/* 
+    Created on : May 30, 2020, 12:12:19 PM
+    Author     : Saad
+*/
+
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: linear-gradient(#054676 10%, #565684);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lg-root{
+    background: rgba(0, 0, 0, 0.4);
+    width: 60%;
+    height: 60%;
+    max-width: 1000px;
+    box-shadow: 0 0 15px black;
+    border-radius: 20px;
+    display: flex;
+}
+
+.lg-left{
+    width: 300px;
+    padding: 20px;
+    position: relative;
+}
+.lg-form{
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    background: #456566;
+    padding: 20px;
+    border-radius: 0 20px 20px 0;
+    position: relative;
+}
+.top{
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 5px #000000;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+.top>div{
+    padding: 10px 20px;
+    font-weight: bolder;
+    color: wheat;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.top .active{
+    background: #ef5645;
+}
+.form-login, .form-reg{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+.form-reg{
+    display: none;
+}
+.lg-form form{
+    background: rgba(220, 220, 190, 1);
+    padding: 30px;
+    border: 1px solid #232323;
+    border-radius: 10px;
+    width: 70%;
+}
+form h4{
+    margin: 0 0 30px 10px;
+    font-size: 2em;
+    background-image: linear-gradient(45deg, green, greenyellow, yellowgreen, yellow, rosybrown, red, #ff3333, aquamarine, aqua, blue, blueviolet);
+    background-size: 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    animation: text 10s ease-in-out infinite;
+}
+
+
+
+input[type="text"], input[type="password"], select{
+    display: block;
+    outline: none;
+    min-width: 250px;
+    width: 100%;
+    border: none;
+    padding: 15px 5px;
+    background: transparent;
+}
+label{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 7px;
+    color: #a7a7a7;
+    transform: translateY(-50%);
+    cursor: text;
+    transition: all 0.5s;
+    user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    pointer-events: none;
+}
+select ~ label{
+    visibility: hidden;
+}
+select{
+    font-family: "tahoma";
+    color: #9a9a9a;
+    padding: 10px;
+}
+input[type="submit"]{
+    margin: 15px 10px 0 0;
+    padding: 8px 20px;
+    background: #55dd55;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 1px green;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: .06em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+input[type="submit"]:hover{
+    box-shadow: 0 0 8px green;
+}
+.input-gns{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.input-gns>div:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.input-gns>div{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 0;
+    border-radius: 0;
+}
+.input-gns>div:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom: none;
+}
+
+.input-gns + hr{
+    color: rgba(250, 240, 255, 0.7);
+}
+
+.input-group{
+    background: white;
+    display: flex;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.input-group input{
+    flex-grow: 1;
+    font-size: 15px;
+    padding: 10px 15px !important;
+    color: #5f6756;
+}
+.input-group input:focus{
+    box-shadow: 0 0 3px 2px #7777ff;
+    z-index: 1;
+}
+.input-group label{
+    left: 20px;
+}
+
+.input-wic{
+    padding-left: 35px;
+    background: white;
+}
+.input-wic .icon{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-wic label{
+    left: 47px;
+}
+
+.label-tooltip{
+    position: relative;
+}
+.label-tooltip input:not(:placeholder-shown) ~ label,
+.label-tooltip select:focus ~ label{
+    display: block;
+    visibility: visible;
+    left: 100%;
+    left: calc(100% + 5px);
+    background: black;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 0 7px black;
+}
+.label-tooltip input:not(:placeholder-shown) ~ label::before,
+.label-tooltip select:focus ~ label:before{
+    content: "";
+    position: absolute;
+    border: 7px solid transparent;
+    border-right-color: black;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-group.error,
+.input-group.success{
+    position: relative;
+}
+.input-group.error input,
+.input-group.success input{
+    padding-right: 30px !important;
+    z-index: 1;
+}
+.input-group.error input{
+    box-shadow: 0 0 3px 2px red;
+}
+.input-group.success input{
+    box-shadow: 0 0 2px 1px green;
+}
+.input-group.error::after,
+.input-group.success::after{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 2px;
+    box-sizing: border-box;
+}
+.input-group.error::after{
+    content: "i";
+    background: red;
+    color: white;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    transform: translateY(-50%);
+}
+.input-group.success::after{
+    content: "";
+    border-width: 0;
+    border-left-width: 3px;
+    border-bottom-width: 3px;
+    border-color: green;
+    border-style: solid;
+    height: 8px;
+    width: 15px;
+    transform: rotateZ(-45deg)  translateY(-9px);
+}
+.input-group .err-msg{
+    visibility: hidden;
+    position: absolute;
+    bottom: calc(100% + 15px);
+    left: 10px;
+    background: #ff6767;
+    z-index: 1;
+    max-width: calc(100% - 20px);
+    overflow-wrap: break-word;
+    padding: 5px 10px;
+    border-radius: 7px;
+    opacity: 0;
+    transition: opacity 0.1s;
+    box-shadow: 0 0 5px #a7a7a7;
+}
+.input-group .err-msg::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 15px;
+    border: 8px solid transparent;
+    border-top-color: #ff6767;
+}
+.input-group .err-msg::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 13px;
+    border: 10px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.2);
+}
+.input-group.error:hover .err-msg,
+.input-group.error input:focus ~ .err-msg{
+    visibility: visible;
+    opacity: 1;
+}
+
+.submit{
+    text-align: right;
+}
+
+
+
+.form-login .input-wic:nth-child(3){
+    border: none;
+    border-bottom: 1px solid #e7e7e7;
+    border-radius: 10px 10px 0 0;
+    margin: 0;
+}
+.form-login .input-wic:nth-child(4){
+    border: none;
+    border-radius: 0 0 10px 10px;
+    margin: 0;
+}
+
+.msg{
+    display: none;
+    background: #aaaaaa;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+.msg.error{
+    display: block;
+    background: pink;
+    border: 1px solid red;
+    color: #bb0000;
+}
+.msg.success{
+    display: block;
+    background: #55ff55;
+    border: 1px solid green;
+    color: #005500;
+}
+@keyframes text{
+    0%{
+        background-position: left;
+    }
+    50%{
+        background-position: right;
+    }
+    100%{
+        background-position: left;
+    }
+}
